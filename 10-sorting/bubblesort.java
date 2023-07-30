@@ -1,0 +1,56 @@
+/**
+ * bubblesort
+ */
+public class bubblesort {
+
+    public static void sorting(int arr[]) {
+
+        for (int turn = 0; turn < arr.length-1; turn++) {
+            for (int j = 0; j < arr.length-1-turn; j++) {///j<=arr.length-2-turn*
+                if(arr[j]>arr[j+1]){
+                    int tmp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=tmp;
+                }
+            }
+            
+        }
+        
+    }
+
+
+      public static void sorting2(int arr[]) {
+
+        //optimised
+        for (int turn = 0; turn < arr.length-1; turn++) {
+            int swap=0;
+            for (int j = 0; j < arr.length-1-turn; j++) {
+                if(arr[j]>arr[j+1]){
+                    int tmp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=tmp;
+                    swap++;
+                }
+                    
+            }
+            if(swap==0){
+                break;
+            }
+            
+        }
+        
+    }
+
+    public static void printarray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+        }
+        System.out.println();
+        
+    }
+
+    public static void main(String[] args) {
+        int arr[]={5,4,1,3,2};
+        sorting(arr);
+    }
+}
